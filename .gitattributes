@@ -1,0 +1,2 @@
+# Keep fixture bytes consistent with the committed SHA-256 manifests on Windows.
+fixtures/** text=auto eol=lf

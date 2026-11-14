@@ -1,0 +1,97 @@
+image_id,score,pred_defect_type,pred_action,reason,light,camera_id,split
+img_15_3,0.5295937283901042,dark,REVIEW,blur=0.942; dark=1.000,dusk,cam_B,eval
+img_17_3,0.4771664375657052,dark,REVIEW,blur=0.792; dark=1.000,day,cam_A,eval
+img_12_3,0.47629910788910046,dark,REVIEW,blur=0.814; dark=0.958,dusk,cam_B,dev
+img_23_3,0.4745383545081614,dark,REVIEW,blur=0.784; dark=1.000,day,cam_A,eval
+img_18_3,0.4725984158954612,blur,REVIEW,blur=0.999; dark=0.614,night,cam_B,dev
+img_13_3,0.46521866037758164,blur,REVIEW,blur=0.999; dark=0.578,night,cam_A,eval
+img_18_2,0.39403260755020403,glare,REVIEW,dark=0.668; glare=0.868,night,cam_B,dev
+img_09_2,0.35,blur,REVIEW,blur=1.000,day,cam_B,dev
+img_21_2,0.34980140739368265,blur,REVIEW,blur=0.999,day,cam_B,dev
+img_15_2,0.3496087146485496,blur,REVIEW,blur=0.999,dusk,cam_B,eval
+img_04_3,0.3472324621197331,blur,REVIEW,blur=0.992,dusk,cam_A,dev
+img_07_3,0.3453146141124784,blur,REVIEW,blur=0.987,day,cam_A,dev
+img_11_3,0.3450281388939422,blur,REVIEW,blur=0.986,day,cam_A,dev
+img_19_3,0.34491409218145475,blur,REVIEW,blur=0.985,day,cam_A,eval
+img_16_2,0.3443096745574527,blur,REVIEW,blur=0.984,day,cam_A,eval
+img_14_2,0.3434685068742328,blur,REVIEW,blur=0.981,day,cam_A,dev
+img_00_3,0.3431800083707162,blur,REVIEW,blur=0.981,day,cam_B,dev
+img_01_3,0.3262994644703169,compression,REVIEW,dark=0.910; compression=0.961,night,cam_A,eval
+img_13_2,0.3124991239357149,dark,REVIEW,dark=0.896; compression=0.889,night,cam_A,eval
+img_06_2,0.3016390161375945,dark,REVIEW,dark=0.904; compression=0.805,night,cam_B,eval
+img_05_3,0.3,glare,REVIEW,glare=1.000,day,cam_A,eval
+img_17_2,0.3,glare,REVIEW,glare=1.000,day,cam_A,eval
+img_20_3,0.3,glare,REVIEW,glare=1.000,day,cam_A,dev
+img_02_2,0.2948275862068965,glare,REVIEW,glare=0.983,day,cam_A,dev
+img_22_3,0.2818371152802467,glare,REVIEW,glare=0.888; compression=0.103,dusk,cam_A,dev
+img_03_3,0.21039373572533956,dark,REVIEW,dark=0.808; compression=0.326,night,cam_B,eval
+img_01_2,0.2,dark,REVIEW,dark=1.000,night,cam_A,eval
+img_08_3,0.2,dark,REVIEW,dark=1.000,dusk,cam_A,dev
+img_02_3,0.1604322202220641,dark,REVIEW,dark=0.802,day,cam_A,dev
+img_20_2,0.15779759329807475,dark,REVIEW,dark=0.789,day,cam_A,dev
+img_10_3,0.15574347739123562,dark,REVIEW,dark=0.779,day,cam_A,dev
+img_05_2,0.15122001598424226,compression,REVIEW,glare=0.011; compression=0.985,day,cam_A,eval
+img_10_2,0.15,compression,REVIEW,compression=1.000,day,cam_A,dev
+img_07_2,0.14880339375671567,dark,REVIEW,dark=0.744,day,cam_A,dev
+img_14_3,0.1487533614174418,compression,REVIEW,glare=0.060; compression=0.871,day,cam_A,dev
+img_00_2,0.1423640790550991,compression,REVIEW,compression=0.949,day,cam_B,dev
+img_22_2,0.13857934546112843,compression,REVIEW,dark=0.001; compression=0.923,dusk,cam_A,dev
+img_18_1,0.1354615489243977,dark,REVIEW,dark=0.673; glare=0.003,night,cam_B,dev
+img_01_1,0.1348934566919245,dark,REVIEW,dark=0.674,night,cam_A,eval
+img_01_0,0.13442830363331057,dark,REVIEW,dark=0.672,night,cam_A,eval
+img_18_0,0.13423479996092716,dark,REVIEW,dark=0.671,night,cam_B,dev
+img_23_2,0.12826897976298068,compression,REVIEW,compression=0.855,day,cam_A,eval
+img_13_0,0.12475419868804383,dark,REVIEW,dark=0.576; glare=0.032,night,cam_A,eval
+img_13_1,0.12397525177211285,dark,REVIEW,dark=0.581; glare=0.026,night,cam_A,eval
+img_06_1,0.12080490085262559,dark,REVIEW,dark=0.604,night,cam_B,eval
+img_06_0,0.11994901922477592,dark,REVIEW,dark=0.600,night,cam_B,eval
+img_03_1,0.11630961758483874,dark,REVIEW,dark=0.569; glare=0.009,night,cam_B,eval
+img_11_2,0.11611368577084015,compression,REVIEW,compression=0.774,day,cam_A,dev
+img_03_0,0.11432624905225067,dark,REVIEW,dark=0.572,night,cam_B,eval
+img_21_3,0.11189398079068334,compression,REVIEW,compression=0.746,day,cam_B,dev
+img_12_2,0.11001503090975634,compression,REVIEW,blur=0.180; compression=0.313,dusk,cam_B,dev
+img_04_2,0.09525220023618111,compression,REVIEW,compression=0.635,dusk,cam_A,dev
+img_12_0,0.09088404442798063,blur,REVIEW,blur=0.253; compression=0.014,dusk,cam_B,dev
+img_06_3,0.09053324505049076,dark,REVIEW,dark=0.237; glare=0.144,night,cam_B,eval
+img_09_3,0.08592501512762715,compression,REVIEW,blur=0.119; compression=0.296,day,cam_B,dev
+img_03_2,0.07795935989806412,dark,REVIEW,dark=0.213; glare=0.118,night,cam_B,eval
+img_09_0,0.06123829863835798,blur,REVIEW,blur=0.160; glare=0.017,day,cam_B,dev
+img_16_3,0.057815917887066304,compression,REVIEW,glare=0.011; compression=0.362,day,cam_A,eval
+img_19_2,0.04135913732831151,compression,REVIEW,glare=0.026; compression=0.224,day,cam_A,eval
+img_08_2,0.033494838726883955,compression,REVIEW,compression=0.223,dusk,cam_A,dev
+img_14_1,0.01896551724137931,glare,REVIEW,glare=0.063,day,cam_A,dev
+img_22_0,0.01879350558670706,compression,REVIEW,dark=0.000; glare=0.011; compression=0.102,dusk,cam_A,dev
+img_09_1,0.017241379310344827,glare,REVIEW,glare=0.057,day,cam_B,dev
+img_15_1,0.015735863316858896,glare,REVIEW,dark=0.001; glare=0.052,dusk,cam_B,eval
+img_23_1,0.010801278789166646,compression,REVIEW,glare=0.011; compression=0.049,day,cam_A,eval
+img_10_0,0.008399324439963942,compression,REVIEW,glare=0.003; compression=0.050,day,cam_A,dev
+img_14_0,0.005172413793103447,glare,REVIEW,glare=0.017,day,cam_A,dev
+img_16_0,0.004310344827586208,glare,REVIEW,glare=0.014,day,cam_A,eval
+img_19_1,0.0035552610655501717,glare,REVIEW,dark=0.001; glare=0.011,day,cam_A,eval
+img_10_1,0.0034482758620689663,glare,REVIEW,glare=0.011,day,cam_A,dev
+img_15_0,0.0034482758620689663,glare,REVIEW,glare=0.011,dusk,cam_B,eval
+img_23_0,0.0034482758620689663,glare,REVIEW,glare=0.011,day,cam_A,eval
+img_05_0,0.0025862068965517245,glare,REVIEW,glare=0.009,day,cam_A,eval
+img_21_0,0.002548948789214105,blur,REVIEW,blur=0.007,day,cam_B,dev
+img_16_1,0.0017241379310344832,glare,REVIEW,glare=0.006,day,cam_A,eval
+img_19_0,0.0009690541689984471,glare,REVIEW,dark=0.001; glare=0.003,day,cam_A,eval
+img_20_1,0.00013303377476358593,dark,REVIEW,dark=0.001,day,cam_A,dev
+img_20_0,8.465785666773656e-05,dark,REVIEW,dark=0.000,day,cam_A,dev
+img_00_0,0.0,none,KEEP,no feature exceeded dev tail,day,cam_B,dev
+img_00_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_B,dev
+img_02_0,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_02_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_04_0,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_A,dev
+img_04_1,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_A,dev
+img_05_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,eval
+img_07_0,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_07_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_08_0,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_A,dev
+img_08_1,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_A,dev
+img_11_0,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_11_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,dev
+img_12_1,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_B,dev
+img_17_0,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,eval
+img_17_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_A,eval
+img_21_1,0.0,none,KEEP,no feature exceeded dev tail,day,cam_B,dev
+img_22_1,0.0,none,KEEP,no feature exceeded dev tail,dusk,cam_A,dev

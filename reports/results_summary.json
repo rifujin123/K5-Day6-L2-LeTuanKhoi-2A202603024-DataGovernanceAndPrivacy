@@ -1,0 +1,243 @@
+{
+  "track": "t02",
+  "seed": 42,
+  "budget": 20,
+  "data_n": 96,
+  "split_counts": {
+    "dev": 56,
+    "eval": 40
+  },
+  "scene_counts": {
+    "dev": 14,
+    "eval": 10
+  },
+  "manifest_count": 14,
+  "manifest_problems": {
+    "t01_coverage": [],
+    "t02_raw_qc": [],
+    "t03_synthetic": [],
+    "t04_sensor_sync": [],
+    "t05_near_duplicate": [],
+    "t06_release_gate": [],
+    "t07_redaction": [],
+    "t08_deletion": [],
+    "t09_privacy_gate": [],
+    "t10_domain_shift": [],
+    "t11_label_errors": [],
+    "t12_vendor_batches": [],
+    "t13_rare_mining": [],
+    "t14_auto_annotation": []
+  },
+  "quality_metrics_status": "unavailable; see evaluation_attempts",
+  "evaluation_attempts": {
+    "baseline": {
+      "command": [
+        "-m",
+        "src.evaluate",
+        "--track",
+        "t02",
+        "--pred",
+        "out\\baseline\\ranked_review.csv",
+        "--run-name",
+        "baseline",
+        "--out",
+        "reports\\metrics_baseline.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "ground truth file not found: C:\\Users\\ADMIN\\Downloads\\day 06\\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\\fixtures\\t02_raw_qc\\gt\\labels.csv\nGround truth is not distributed in the student repo; the instructor runs official evaluation (docs/INSTRUCTOR_SETUP.md).\n"
+    },
+    "poc": {
+      "command": [
+        "-m",
+        "src.evaluate",
+        "--track",
+        "t02",
+        "--pred",
+        "out\\poc\\ranked_review.csv",
+        "--run-name",
+        "poc",
+        "--out",
+        "reports\\metrics_poc.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "ground truth file not found: C:\\Users\\ADMIN\\Downloads\\day 06\\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\\fixtures\\t02_raw_qc\\gt\\labels.csv\nGround truth is not distributed in the student repo; the instructor runs official evaluation (docs/INSTRUCTOR_SETUP.md).\n"
+    }
+  },
+  "runs": {
+    "baseline": {
+      "track": "t02",
+      "run_name": "baseline",
+      "status": 0,
+      "seed": 42,
+      "offline": true,
+      "input": "fixtures\\t02_raw_qc",
+      "output": "out\\baseline",
+      "pipeline": "src.baseline_t02",
+      "config_hash": "b16a44b3db95",
+      "git_sha": "8c76625",
+      "runtime_seconds": 1.3647,
+      "stats": {
+        "baseline_laplacian_threshold": 222.3122100830078,
+        "baseline_dev_n": 56,
+        "process_seconds": 0.7375,
+        "process_ms_per_image": 7.682,
+        "n_items": 96,
+        "ranked_n": 96,
+        "queue_n": 20,
+        "eval_split": "eval",
+        "queue_id": "t02-qc-5801cc12a8e4",
+        "review_counts": {
+          "qc": 0,
+          "senior_qc": 0,
+          "domain_owner": 0
+        },
+        "review_session_seconds": 0.0
+      },
+      "machine": {
+        "python": "3.14.3",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+      },
+      "output_check": {
+        "pred_file": "out\\baseline\\ranked_review.csv",
+        "exists": true,
+        "missing_columns": []
+      }
+    },
+    "poc": {
+      "track": "t02",
+      "run_name": "poc",
+      "status": 0,
+      "seed": 42,
+      "offline": true,
+      "input": "fixtures\\t02_raw_qc",
+      "output": "out\\poc",
+      "pipeline": "src.pipeline",
+      "config_hash": "0c4c94f26cac",
+      "git_sha": "8c76625",
+      "runtime_seconds": 2.0355,
+      "stats": {
+        "normalization": {
+          "blur": {
+            "direction": "low",
+            "threshold_q25_or_q75": 222.3122100830078,
+            "dev_min": 1.6617363691329956,
+            "dev_max": 1906.7576904296875,
+            "dev_n": 56
+          },
+          "dark": {
+            "direction": "high",
+            "threshold_q25_or_q75": 0.0038411458333333336,
+            "dev_min": 0.0,
+            "dev_max": 0.9369270833333333,
+            "dev_n": 56
+          },
+          "glare": {
+            "direction": "high",
+            "threshold_q25_or_q75": 0.005277777777777778,
+            "dev_min": 0.0,
+            "dev_max": 0.10194444444444445,
+            "dev_n": 56
+          },
+          "compression": {
+            "direction": "high",
+            "threshold_q25_or_q75": 0.9249193072319031,
+            "dev_min": 0.0,
+            "dev_max": 5.383511543273926,
+            "dev_n": 56
+          }
+        },
+        "feature_weights": {
+          "blur": 0.35,
+          "dark": 0.2,
+          "glare": 0.3,
+          "compression": 0.15
+        },
+        "process_seconds": 1.4132,
+        "process_ms_per_image": 14.721,
+        "n_items": 96,
+        "ranked_n": 96,
+        "queue_n": 20,
+        "eval_split": "eval",
+        "queue_id": "t02-qc-13a5be3b0d19",
+        "review_counts": {
+          "qc": 0,
+          "senior_qc": 0,
+          "domain_owner": 0
+        },
+        "review_session_seconds": 0.0
+      },
+      "machine": {
+        "python": "3.14.3",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+      },
+      "output_check": {
+        "pred_file": "out\\poc\\ranked_review.csv",
+        "exists": true,
+        "missing_columns": []
+      }
+    }
+  },
+  "decisions": {
+    "baseline": {
+      "status": "HOLD",
+      "reason_code": "REVIEW_PENDING",
+      "reason": "20 of 20 images in the eval top-20 queue remain unresolved or on HOLD. This decision applies to the eval top-20 review queue only; it does not approve release of the full batch.",
+      "owner": "Lê Tuấn Khôi (group lead)",
+      "scope": "t02:eval-top-20:t02-qc-5801cc12a8e4",
+      "evidence": [
+        "out\\baseline\\ranked_review.csv",
+        "out\\baseline\\review_queue.csv",
+        "out\\baseline\\audit_log.jsonl"
+      ],
+      "metrics": {
+        "queue_size": 20,
+        "unresolved": 20,
+        "recapture": 0,
+        "keep": 0
+      },
+      "ts": "2026-11-14T15:52:08+00:00",
+      "canonical": "HOLD"
+    },
+    "poc": {
+      "status": "HOLD",
+      "reason_code": "REVIEW_PENDING",
+      "reason": "20 of 20 images in the eval top-20 queue remain unresolved or on HOLD. This decision applies to the eval top-20 review queue only; it does not approve release of the full batch.",
+      "owner": "Lê Tuấn Khôi (group lead)",
+      "scope": "t02:eval-top-20:t02-qc-13a5be3b0d19",
+      "evidence": [
+        "out\\poc\\ranked_review.csv",
+        "out\\poc\\review_queue.csv",
+        "out\\poc\\audit_log.jsonl"
+      ],
+      "metrics": {
+        "queue_size": 20,
+        "unresolved": 20,
+        "recapture": 0,
+        "keep": 0
+      },
+      "ts": "2026-11-14T15:52:08+00:00",
+      "canonical": "HOLD"
+    }
+  },
+  "top20_overlap": 14,
+  "top20_jaccard": 0.5384615384615384,
+  "tests": {
+    "passed": 75,
+    "skipped": 39,
+    "failed": 0,
+    "errors": 0
+  },
+  "package_versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "Pillow": "13.0.0",
+    "scipy": "1.18.1",
+    "PyYAML": "6.0.3",
+    "pytest": "9.2.0"
+  },
+  "warning": "Selection rates and overlap are operational diagnostics, not recall, precision or false-alarm rates."
+}

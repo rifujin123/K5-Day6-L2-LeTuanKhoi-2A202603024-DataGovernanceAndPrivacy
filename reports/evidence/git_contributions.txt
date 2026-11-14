@@ -1,0 +1,16 @@
+8c76625 | KhoiLe <87595938+rifujin123@users.noreply.github.com> | Delete docs/ONBOARDING_T02.md
+3b49934 | KhoiLe <87595938+rifujin123@users.noreply.github.com> | Delete docs/INSTRUCTOR_SETUP.md
+d774850 | Derr <truonggiangbg00@gmail.com> | Nộp bài Lab ngày 6
+7513a60 | KhoiLe <tuankhoi000@gmail.com> | docs: align contributor Git author name
+1596eb9 | KhoiLe <tuankhoi000@gmail.com> | docs: record T02 implementation commit
+1243d92 | quangts2531 <nguyenvietquang25032001@gmail.com> | Update vai trò quang team_contributions.csv
+4a2097e | KhoiLe <tuankhoi000@gmail.com> | docs: add seven T02 contributor roles
+13ef41c | KhoiLe <tuankhoi000@gmail.com> | feat(t02): implement QC triage workflow
+b0ce8bf | loversky02 <bao232030333@lms.utc.edu.vn> | fix(eval): reject duplicate and invalid predictions; harden overlay checks
+59a0bfb | loversky02 <bao232030333@lms.utc.edu.vn> | chore: move ground truth and fixture generators to private instructor repo
+815c7c4 | loversky02 <bao232030333@lms.utc.edu.vn> | docs: update track guidance, tool versions and statistical caveats
+b35487b | loversky02 <bao232030333@lms.utc.edu.vn> | feat(tools): add hidden eval generator for official grading
+68ddd5c | loversky02 <bao232030333@lms.utc.edu.vn> | fix(metrics): add guardrails and worst-case defaults to T07, T09, T12
+dd1a58d | loversky02 <bao232030333@lms.utc.edu.vn> | fix(t09): correct VN lawful-basis gold labels and add sourced VN policy rules
+4536936 | Tin Duong <26454564+ivo-gilles@users.noreply.github.com> | docs: student quickstart + HITL review loop; clear error when score column missing
+6325efb | Tin Duong <26454564+ivo-gilles@users.noreply.github.com> | docs: track briefs, report templates, instructor setup and lab tooling

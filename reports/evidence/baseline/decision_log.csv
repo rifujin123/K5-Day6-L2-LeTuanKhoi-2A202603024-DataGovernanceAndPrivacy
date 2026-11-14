@@ -1,0 +1,2 @@
+ts,scope,status,canonical,reason_code,reason,owner,evidence
+2026-11-14T15:52:08+00:00,t02:eval-top-20:t02-qc-5801cc12a8e4,HOLD,HOLD,REVIEW_PENDING,20 of 20 images in the eval top-20 queue remain unresolved or on HOLD. This decision applies to the eval top-20 review queue only; it does not approve release of the full batch.,Lê Tuấn Khôi (group lead),out\baseline\ranked_review.csv;out\baseline\review_queue.csv;out\baseline\audit_log.jsonl

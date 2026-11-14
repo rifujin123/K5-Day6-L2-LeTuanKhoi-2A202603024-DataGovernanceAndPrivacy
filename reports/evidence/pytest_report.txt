@@ -1,0 +1,128 @@
+....s....s...s............................ssssssssssssss................ [ 63%]
+....................ssssssssssssssssssssss                               [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\cacheprovider.py:487
+  C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\.venv\Lib\site-packages\_pytest\cacheprovider.py:487: PytestCacheWarning: could not create cache path C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\.pytest_cache\v\cache\nodeids: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\ADMIN\\Downloads\\day 06\\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(str(n) for n in self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================================== PASSES ====================================
+_________ test_t02_pipeline_runs_offline_and_writes_contract_outputs __________
+---------------------------- Captured stdout call -----------------------------
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_t02_pipeline_runs_offline0 seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.0709s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_t02_pipeline_runs_offline0\run_info.json
+_________________ test_t02_laplacian_baseline_runs_end_to_end _________________
+---------------------------- Captured stdout call -----------------------------
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_t02_laplacian_baseline_ru0 seed=42 offline=True pipeline=src.baseline_t02
+[main] status=0 runtime=1.2778s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_t02_laplacian_baseline_ru0\run_info.json
+_______________________ test_random_baseline_end_to_end _______________________
+---------------------------- Captured stdout call -----------------------------
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_random_baseline_end_to_en0\baseline seed=42 offline=True pipeline=src.examples.random_baseline
+[main] status=0 runtime=0.1831s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_random_baseline_end_to_en0\baseline\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_random_baseline_end_to_en0\baseline2 seed=42 offline=True pipeline=src.examples.random_baseline
+[main] status=0 runtime=0.1638s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_random_baseline_end_to_en0\baseline2\run_info.json
+______________________ test_missing_input_folder_exit_2 _______________________
+---------------------------- Captured stderr call -----------------------------
+[main] input folder not found: C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_missing_input_folder_exit0\nope
+_________ test_hold_escalates_with_history_and_reruns_are_idempotent __________
+---------------------------- Captured stdout call -----------------------------
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=1.7929s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.0463s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.1127s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=1.984s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=1.8992s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.4535s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_hold_escalates_with_histo0\out\run_info.json
+___________________ test_all_keeps_produce_queue_scoped_go ____________________
+---------------------------- Captured stdout call -----------------------------
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_all_keeps_produce_queue_s0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.1956s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_all_keeps_produce_queue_s0\out\run_info.json
+[main] track=t02 (Raw QC Triage) input=fixtures\t02_raw_qc output=C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_all_keeps_produce_queue_s0\out seed=42 offline=True pipeline=src.pipeline
+[main] status=0 runtime=2.4555s -> C:\Users\ADMIN\Downloads\day 06\K5-Day6-L2-LeTuanKhoi-2A202603024-DataGovernanceAndPrivacy\out\pytest-report\test_all_keeps_produce_queue_s0\out\run_info.json
+=========================== short test summary info ===========================
+PASSED tests/test_cli.py::test_t02_pipeline_runs_offline_and_writes_contract_outputs
+PASSED tests/test_cli.py::test_t02_laplacian_baseline_runs_end_to_end
+PASSED tests/test_cli.py::test_random_baseline_end_to_end
+PASSED tests/test_cli.py::test_evaluate_without_ground_truth_fails_clearly
+PASSED tests/test_cli.py::test_missing_input_folder_exit_2
+PASSED tests/test_cli.py::test_offline_guard_blocks_network
+PASSED tests/test_cli.py::test_gt_guard_blocks_ground_truth_reads
+PASSED tests/test_cli.py::test_cli_module_invocation
+PASSED tests/test_common.py::test_review_roundtrip_and_overrides
+PASSED tests/test_common.py::test_review_requires_owner
+PASSED tests/test_common.py::test_decision_validation
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t01]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t02]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t03]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t04]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t05]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t06]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t07]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t08]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t09]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t10]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t11]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t12]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t13]
+PASSED tests/test_fixtures.py::test_manifest_hashes_match[t14]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t01]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t02]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t03]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t04]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t05]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t06]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t07]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t08]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t09]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t10]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t11]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t12]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t13]
+PASSED tests/test_fixtures.py::test_ground_truth_path_is_in_gt_folder[t14]
+PASSED tests/test_fixtures.py::test_synthetic_sources_only
+PASSED tests/test_metrics.py::test_prf_basic_and_zero_division
+PASSED tests/test_metrics.py::test_recall_precision_at_k
+PASSED tests/test_metrics.py::test_weighted_coverage_ignores_non_targets
+PASSED tests/test_metrics.py::test_iou_and_detection_matching
+PASSED tests/test_metrics.py::test_region_coverage_and_pii_miss
+PASSED tests/test_metrics.py::test_pairs_and_leak
+PASSED tests/test_metrics.py::test_timing_hold_counts_as_wrong
+PASSED tests/test_metrics.py::test_estimation_and_correlation
+PASSED tests/test_t02_pipeline.py::test_dev_tail_normalization_orders_blurry_before_sharp
+PASSED tests/test_t02_pipeline.py::test_dev_tail_normalization_orders_high_tail_risk_and_constant_dev_outlier
+PASSED tests/test_t02_pipeline.py::test_process_high_tail_signals_raise_score
+PASSED tests/test_t02_pipeline.py::test_t02_contact_sheet_uses_configured_export_filename
+PASSED tests/test_t02_pipeline.py::test_contact_sheet_only_shows_override_when_csv_has_column
+PASSED tests/test_t02_pipeline.py::test_rank_uses_only_eval_top20_and_keeps_all_ids_in_ranking
+PASSED tests/test_t02_pipeline.py::test_rank_rejects_nonpositive_review_budget[0]
+PASSED tests/test_t02_pipeline.py::test_rank_rejects_nonpositive_review_budget[-1]
+PASSED tests/test_t02_pipeline.py::test_load_rejects_image_paths_missing_from_manifest
+PASSED tests/test_t02_pipeline.py::test_image_path_rejects_paths_outside_input_root[../outside.jpg]
+PASSED tests/test_t02_pipeline.py::test_image_path_rejects_paths_outside_input_root[C:/outside.jpg]
+PASSED tests/test_t02_pipeline.py::test_missing_image_error_names_id_and_path
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes0-stage]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes1-queue_id]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes2-not in this queue]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes3-invalid action]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes4-reviewer is required]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes5-review_note is required]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes6-invalid review_reason_code]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes7-no_defect is valid only]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes8-non-negative]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes9-non-negative]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes10-ISO-8601 timestamp]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_invalid_stage_queue_or_decision[changes11-with timezone]
+PASSED tests/test_t02_pipeline.py::test_review_import_rejects_missing_columns_and_duplicate_items
+PASSED tests/test_t02_pipeline.py::test_hold_escalates_with_history_and_reruns_are_idempotent
+PASSED tests/test_t02_pipeline.py::test_all_keeps_produce_queue_scoped_go
+SKIPPED [1] tests\test_cli.py:61: ground truth not distributed (instructor overlay not installed)
+SKIPPED [1] tests\test_cli.py:103: ground truth not distributed (instructor overlay not installed)
+SKIPPED [1] tests\test_common.py:44: ground truth not distributed (instructor overlay not installed)
+SKIPPED [14] tests\test_fixtures.py:28: ground truth not distributed (instructor overlay not installed)
+SKIPPED [14] tests\test_track_evaluators.py:76: ground truth not distributed (instructor overlay not installed)
+SKIPPED [8] tests\test_track_evaluators.py: ground truth not distributed (instructor overlay not installed)

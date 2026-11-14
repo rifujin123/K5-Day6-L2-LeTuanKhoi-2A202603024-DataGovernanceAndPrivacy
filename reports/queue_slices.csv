@@ -1,0 +1,6 @@
+slice,eval_n,baseline_selected,baseline_selection_rate,poc_selected,poc_selection_rate
+light=day,20,8,0.4,8,0.4
+light=dusk,4,2,0.5,2,0.5
+light=night,16,10,0.625,10,0.625
+camera_id=cam_A,28,13,0.4642857142857143,16,0.5714285714285714
+camera_id=cam_B,12,7,0.5833333333333334,4,0.3333333333333333

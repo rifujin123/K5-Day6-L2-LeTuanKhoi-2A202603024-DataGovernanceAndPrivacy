@@ -1,0 +1,74 @@
+{
+  "track": "t02",
+  "run_name": "poc",
+  "status": 0,
+  "seed": 42,
+  "offline": true,
+  "input": "fixtures\\t02_raw_qc",
+  "output": "out\\poc",
+  "pipeline": "src.pipeline",
+  "config_hash": "0c4c94f26cac",
+  "git_sha": "8c76625",
+  "runtime_seconds": 2.0355,
+  "stats": {
+    "normalization": {
+      "blur": {
+        "direction": "low",
+        "threshold_q25_or_q75": 222.3122100830078,
+        "dev_min": 1.6617363691329956,
+        "dev_max": 1906.7576904296875,
+        "dev_n": 56
+      },
+      "dark": {
+        "direction": "high",
+        "threshold_q25_or_q75": 0.0038411458333333336,
+        "dev_min": 0.0,
+        "dev_max": 0.9369270833333333,
+        "dev_n": 56
+      },
+      "glare": {
+        "direction": "high",
+        "threshold_q25_or_q75": 0.005277777777777778,
+        "dev_min": 0.0,
+        "dev_max": 0.10194444444444445,
+        "dev_n": 56
+      },
+      "compression": {
+        "direction": "high",
+        "threshold_q25_or_q75": 0.9249193072319031,
+        "dev_min": 0.0,
+        "dev_max": 5.383511543273926,
+        "dev_n": 56
+      }
+    },
+    "feature_weights": {
+      "blur": 0.35,
+      "dark": 0.2,
+      "glare": 0.3,
+      "compression": 0.15
+    },
+    "process_seconds": 1.4132,
+    "process_ms_per_image": 14.721,
+    "n_items": 96,
+    "ranked_n": 96,
+    "queue_n": 20,
+    "eval_split": "eval",
+    "queue_id": "t02-qc-13a5be3b0d19",
+    "review_counts": {
+      "qc": 0,
+      "senior_qc": 0,
+      "domain_owner": 0
+    },
+    "review_session_seconds": 0.0
+  },
+  "machine": {
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+  },
+  "output_check": {
+    "pred_file": "out\\poc\\ranked_review.csv",
+    "exists": true,
+    "missing_columns": []
+  }
+}

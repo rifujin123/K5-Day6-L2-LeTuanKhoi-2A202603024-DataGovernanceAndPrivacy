@@ -28,9 +28,11 @@ from . import pairs as PA
 from . import ranking as RK
 from . import timing as TI
 
+# Note: Đường dẫn gốc tới thư mục fixtures chứa dữ liệu ground truth của các track.
 FIXTURES = Path(__file__).resolve().parents[2] / "fixtures"
 
 
+# Note: Kết quả trả về chuẩn của mỗi evaluator gồm danh sách metrics, bảng phân tích theo slice và ghi chú.
 @dataclass
 class EvalOutput:
     metrics: list[MetricResult]
@@ -38,6 +40,7 @@ class EvalOutput:
     notes: list[str] = field(default_factory=list)
 
 
+# Note: Đặc tả cấu hình cho từng track (tên track, thư mục fixture, file GT mặc định, file prediction, cột bắt buộc, hàm đánh giá).
 @dataclass
 class TrackSpec:
     track: str
@@ -50,6 +53,7 @@ class TrackSpec:
     params: dict = field(default_factory=dict)
 
 
+# Note: Helper tạo đối tượng MetricResult; chuyển NaN thành None để tránh lỗi serialize/hiển thị.
 def _m(name, value, direction, unit="", num=None, den=None, n=None, primary=False, slice="all", notes="") -> MetricResult:
     if isinstance(value, float) and math.isnan(value):
         value = None
@@ -57,6 +61,7 @@ def _m(name, value, direction, unit="", num=None, den=None, n=None, primary=Fals
                         numerator=num, denominator=den, n=n, slice=slice, primary=primary, notes=notes)
 
 
+# Note: Kiểm tra điều kiện ràng buộc phụ (guardrail) để tránh các policy tầm thường đạt điểm chính cao bất thường.
 def _guardrail(name: str, value, limit: float) -> tuple[MetricResult, str]:
     """Constrained primary: the primary metric only counts when this side metric stays within its limit.
 
@@ -68,12 +73,14 @@ def _guardrail(name: str, value, limit: float) -> tuple[MetricResult, str]:
     return _m(f"Guardrail: {name} <= {limit}", 1.0 if ok else 0.0, "higher", "1 = pass, 0 = fail (constrained primary)"), note
 
 
+# Note: Kiểm tra các cột bắt buộc phải có trong file prediction.
 def _need(df: pd.DataFrame, cols: list[str], what: str) -> None:
     miss = [c for c in cols if c not in df.columns]
     if miss:
         raise ValueError(f"{what} is missing required columns {miss}; has {list(df.columns)}")
 
 
+# Note: Đảm bảo mỗi đơn vị đánh giá (key) chỉ xuất hiện 1 dòng, tránh trùng lặp làm sai lệch tỷ lệ sau khi merge.
 def _unique(df: pd.DataFrame, keys: list[str], what: str) -> None:
     """One prediction row per evaluation unit; duplicates would re-weight rates computed after a merge."""
     dup = df[df.duplicated(keys, keep=False)]
@@ -81,10 +88,12 @@ def _unique(df: pd.DataFrame, keys: list[str], what: str) -> None:
         raise ValueError(f"{what} has duplicate {keys} rows: {dup[keys].drop_duplicates().head(5).values.tolist()}")
 
 
+# Note: Suy ra thư mục gốc của fixture từ đường dẫn file ground truth (bỏ qua thư mục con 'gt' nếu có).
 def _fixture_dir_of(gt_path: Path) -> Path:
     return gt_path.parent.parent if gt_path.parent.name == "gt" else gt_path.parent
 
 
+# Note: Lọc DataFrame ground truth theo tập split cấu hình (vd: 'eval', 'heldout', hoặc 'all' để lấy toàn bộ).
 def _split(df: pd.DataFrame, cfg: dict, default: str) -> pd.DataFrame:
     s = cfg.get("split", default)
     if s in (None, "all") or "split" not in df.columns:
@@ -93,6 +102,7 @@ def _split(df: pd.DataFrame, cfg: dict, default: str) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------------- T01
+# Note: T01 (Coverage Planner) - Đánh giá độ phủ có trọng số Weighted Coverage@K, recall kịch bản hiếm, trùng lặp và chi phí thu thập.
 def eval_t01(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     fx = _fixture_dir_of(gt_path)
     targets = pd.read_csv(fx / "targets.csv")
@@ -141,6 +151,7 @@ def eval_t01(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T02
+# Note: T02 (Raw QC Triage) - Xếp hạng ảnh theo score để chọn top-B ảnh lỗi; đo Defect Recall@B (chính), Precision@B và tỷ lệ báo động giả theo điều kiện ánh sáng.
 def eval_t02(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = _split(pd.read_csv(gt_path), cfg, "eval")
     pred = pd.read_csv(pred_path)
@@ -173,6 +184,7 @@ def eval_t02(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T03
+# Note: T03 (Synthetic-vs-Real) - Phân loại ảnh không dùng được (pred_unusable=1); tính F1, Precision/Recall và kiểm tra đầy đủ provenance trong transform_manifest.csv.
 def eval_t03(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = pd.read_csv(gt_path)
     pred = pd.read_csv(pred_path)
@@ -199,6 +211,7 @@ def eval_t03(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T04
+# Note: T04 (Sensor Sync Guard) - Đánh giá độ chính xác ghép cặp frame-IMU trong ngưỡng tol_ms, sai số trung vị và khả năng HOLD các frame bị dropout.
 def eval_t04(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = _split(pd.read_csv(gt_path), cfg, "eval")
     pred = pd.read_csv(pred_path)
@@ -225,6 +238,7 @@ def eval_t04(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T05
+# Note: T05 (Leakage & Near-Duplicate Guardian) - Phát hiện cặp ảnh gần trùng (F1 theo cặp), tỷ lệ gộp nhầm khác scene và rò rỉ dữ liệu qua split_manifest.csv.
 def eval_t05(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = pd.read_csv(gt_path)
     pred = pd.read_csv(pred_path, dtype={"img_a": str, "img_b": str})
@@ -262,6 +276,7 @@ def eval_t05(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T06
+# Note: T06 (Semantic Integrity & Provenance Gate) - Cổng chặn phát hành bị lỗi ngầm (Silent-defect Detection F1); quyết định khác GO được tính là bị chặn (blocked).
 def eval_t06(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = _split(pd.read_csv(gt_path), cfg, "all")
     pred = pd.read_csv(pred_path)
@@ -284,6 +299,7 @@ def eval_t06(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T07
+# Note: T07 (Face/Plate Redaction) - Đo tỷ lệ bỏ sót vùng PII (PII Miss Rate, thấp hơn là tốt) kèm guardrail giới hạn Over-redaction rate để tránh làm mờ toàn bộ ảnh.
 def eval_t07(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     fx = _fixture_dir_of(gt_path)
     imgs = pd.read_csv(fx / "images.csv")
@@ -315,6 +331,7 @@ def eval_t07(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T08
+# Note: T08 (Retention & Delete Request) - Đánh giá mức độ xóa đủ (Deletion Completeness), đếm xóa nhầm ngoại lệ/ngoài phạm vi và kiểm tra audit_log.jsonl.
 def eval_t08(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = pd.read_csv(gt_path)
     pred = pd.read_csv(pred_path)
@@ -343,6 +360,7 @@ def eval_t08(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T09
+# Note: T09 (Multi-Market Privacy Decision Gate) - Đo tỷ lệ bỏ sót rủi ro (Critical-miss Rate: ca rủi ro bị cho GO) kèm guardrail giới hạn False HOLD rate.
 def eval_t09(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = _split(pd.read_csv(gt_path), cfg, "eval")
     pred = pd.read_csv(pred_path)
@@ -377,6 +395,7 @@ def eval_t09(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T10
+# Note: T10 (Domain Shift Radar) - Đo tương quan hạng Spearman giữa shift_score và perf_drop (kèm bootstrap CI) cùng AUROC nhận diện batch rủi ro cao.
 def eval_t10(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = pd.read_csv(gt_path)
     pred = pd.read_csv(pred_path)
@@ -400,6 +419,7 @@ def eval_t10(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T11
+# Note: T11 (Post-label Error Review Prioritizer) - Xếp hạng các annotation/ảnh nghi lỗi để review theo ngân sách B; đo Error Recall@B và độ phủ loại lỗi.
 def eval_t11(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     fx = _fixture_dir_of(gt_path)
     imgs = pd.read_csv(fx / "images.csv")
@@ -430,6 +450,7 @@ def eval_t11(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T12
+# Note: T12 (Vendor Batch Acceptance) - Kiểm định lô dữ liệu: MAE ước lượng tỷ lệ lỗi, Bad-batch Recall, kiểm tra vi phạm ngân sách audit và guardrail HOLD rate.
 T12_DECISIONS = {"ACCEPT", "REWORK", "HOLD"}
 
 
@@ -482,6 +503,7 @@ def eval_t12(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T13
+# Note: T13 (Active Learning & Rare Case Miner) - Chọn K ảnh giá trị nhất; đo Rare-case Recall@K, độ đa dạng scene và tỷ lệ ảnh rác/trùng lặp.
 def eval_t13(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     gt = pd.read_csv(gt_path)
     pred = pd.read_csv(pred_path)
@@ -506,6 +528,7 @@ def eval_t13(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
 
 
 # ----------------------------------------------------------------------------- T14
+# Note: T14 (Auto-Annotation + Human QC Exporter) - Đánh giá bounding box xuất ra bằng Detection F1@IoU theo từng class, tỷ lệ nhãn/tọa độ không hợp lệ và vật thể nhỏ.
 def eval_t14(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     fx = _fixture_dir_of(gt_path)
     tax = set(yaml.safe_load((fx / "taxonomy.yaml").read_text())["classes"].values())
@@ -538,6 +561,7 @@ def eval_t14(gt_path: Path, pred_path: Path, cfg: dict) -> EvalOutput:
     return EvalOutput(ms, pd.DataFrame(rows))
 
 
+# Note: Bảng đăng ký trung tâm ánh xạ mã track ('t01'..'t14') tới TrackSpec tương ứng.
 TRACKS: dict[str, TrackSpec] = {
     "t01": TrackSpec("t01", "Coverage Planner", "t01_coverage", "gt/verified_tags.csv", "pick.csv", ["clip_id"], eval_t01, {"k": 30}),
     "t02": TrackSpec("t02", "Raw QC Triage", "t02_raw_qc", "gt/labels.csv", "ranked_review.csv", ["image_id", "score"], eval_t02, {"budget": 20, "split": "eval"}),
@@ -556,6 +580,7 @@ TRACKS: dict[str, TrackSpec] = {
 }
 
 
+# Note: Chuẩn hóa chuỗi track đầu vào (lấy 3 ký tự đầu viết thường) và trả về TrackSpec.
 def get_track(track: str) -> TrackSpec:
     t = track.lower()[:3]
     if t not in TRACKS:
@@ -563,6 +588,7 @@ def get_track(track: str) -> TrackSpec:
     return TRACKS[t]
 
 
+# Note: Trả về đường dẫn file ground truth mặc định trong thư mục fixtures cho track chỉ định.
 def default_gt_path(track: str) -> Path:
     spec = get_track(track)
     return FIXTURES / spec.fixture_dir / spec.default_gt

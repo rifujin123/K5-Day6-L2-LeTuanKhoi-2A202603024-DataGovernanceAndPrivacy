@@ -5,7 +5,7 @@ Workflow used by every track:
   2. a human fills `reviewer`, `reviewer_decision`, `override_value`, `review_note`
      (in a spreadsheet, or via the HTML contact sheet "Export CSV" button)
   3. load_review_decisions(...) + apply_overrides(...) -> final outputs
-  4. every change is appended to an AuditLog (JSONL) with who/when/why
+  4. every change is appended to an AuditLog (JSONL) with who/when/why.
 """
 from __future__ import annotations
 

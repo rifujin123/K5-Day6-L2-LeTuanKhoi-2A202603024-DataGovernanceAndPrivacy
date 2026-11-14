@@ -2,7 +2,7 @@
 Member 1,rifujin123,tuankhoi000@gmail.com,Lead / Integrator,src/pipeline.py; configs/lab.yaml; end-to-end integration,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
 Member 2,quangts2531,nguyenvietquang25032001@gmail.com,Data & Provenance,fixtures/t02_raw_qc/; src/common/manifest.py; src/common/io.py,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
 Member 3,,,Core Algorithm & Baseline,src/pipeline.py; src/baseline_t02.py; src/common/image_ops.py,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
-Member 4,Derr,truonggiangbg00@gmail.com,Human Review & Audit,src/common/review.py; review queue; audit log,9046f72;9046f72,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
+Member 4,Derr,truonggiangbg00@gmail.com,Human Review & Audit,src/common/review.py; review queue; audit log,8bc4d5e,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
 Member 5,,,Metric & Evaluation,docs/tracks/T02.md; src/metrics/tracks.py; evaluation protocol,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
 Member 6,,,QA & Reproducibility,tests/; tools/; offline and GT guard verification,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,
 Member 7,,,Demo & Documentation,docs/ONBOARDING_T02.md; demo/t02_qc_triage_demo.html; logs.md,,Phân công dự kiến; cập nhật theo đóng góp thực tế.,

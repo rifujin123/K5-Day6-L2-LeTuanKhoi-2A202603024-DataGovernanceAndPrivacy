@@ -229,7 +229,7 @@ Các giới hạn còn lại: tập eval chỉ 10 cảnh; các biến thể cùn
 |---|---|---|---|
 | Lê Tuấn Khôi / `KhoiLe` | Lead, tích hợp và implementation T02 | `13ef41c`: pipeline, baseline, review/contact sheet, image feature, test T02, demo, config; `4a2097e`, `1596eb9`, `7513a60`: tài liệu/đóng góp | Chưa có bằng chứng xác nhận ai đã trình bày |
 | `quangts2531` — chưa xác nhận họ tên | Data & Provenance theo phân công | `1243d92`: cập nhật vai trò trong CSV đóng góp | Commit này chưa chứng minh implementation data/provenance |
-| Chưa xác nhận thành viên | Core Algorithm & Baseline theo phân công | Chưa có commit riêng được xác nhận | Implementation hiện được chứng minh bởi commit của KhoiLe |
+| Trần Thị Ngọc Ánh / `Ngocanh203` | Core Algorithm & Baseline theo phân công | `ea586e8`: cập nhật tài liệu onboarding T02 | Implementation hiện được chứng minh bởi commit của KhoiLe |
 | `Derr` — chưa xác nhận họ tên | Human Review & Audit theo phân công | `d774850`: sửa dấu câu docstring; `bc88bf6` rồi `8bc4d5e`: xóa và khôi phục `src/common/report.py`; `5ec9a72`: cập nhật bảng đóng góp | File report được khôi phục về nội dung đã có; chưa có lượt review thật được chứng minh |
 | `Ngunhcho7654` — chưa xác nhận họ tên | Metric & Evaluation | `fe5afc4`: thêm 26 dòng chú thích tiếng Việt trong `src/metrics/tracks.py`; `6d254f9`: cập nhật bảng đóng góp | Đóng góp giải thích mã nguồn; không thay thuật toán metric, chưa xác nhận trình bày |
 | Chưa xác nhận thành viên | QA & Reproducibility theo phân công | Chưa có commit riêng được xác nhận | Không phân bổ lại test của người khác thành đóng góp cá nhân |
